@@ -17,9 +17,8 @@ const listOfJobs = [
 ]
 
 let activeJobs = listOfJobs.filter(function getActive (job) { return job.isActive })
-
 console.log(activeJobs)
 
+// Less clutter
 let activeJobs2 = listOfJobs.filter(job => job.isActive);
-
 console.log(activeJobs2)
