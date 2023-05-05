@@ -1,4 +1,4 @@
-import Person from './person';
+import Person, { utils } from './person';
 
 // Default -> import ... from ''
 // Named -> import {..., ....} from ''

@@ -1,4 +1,4 @@
-export default class Person {
+export class Person {
     constructor(name) {
         this.name = name;
     }
@@ -10,4 +10,8 @@ export default class Person {
     getRef() {
         return this;
     }
+}
+
+export function utils() {
+    // some code
 }
