@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Form</title>
+  </head>
+  <body>
+    <h1>HTML Form</h1>
+
+    <!-- The 'action' attribute requires an action to perform when the user submits the data -->
+    <form action="">
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="username"
+        required
+      />
+      <br />
+      <br />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="abc@xyz.com"
+        required
+      />
+      <br />
+      <br />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+
+      <br /><br />
+
+      <p><strong>Select your age:</strong></p>
+      <input type="radio" id="0-25" name="age" value="0-25" />
+      <label for="0-25">0-25</label>
+      <input type="radio" id="26-50" name="age" value="26-50" />
+      <label for="26-50">26-50</label>
+      <input type="radio" id="51+" name="age" value="51+" />
+      <label for="51+">51+</label>
+
+      <br /><br />
+
+      <label for="country">Choose Your Country:</label>
+      <select name="country" id="country">
+        <option value="Pak">Pakistan</option>
+        <option value="Nor">Norway</option>
+        <option value="Swe">Sweden</option>
+      </select>
+      <br /><br />
+      <label for="about">Describe your self:</label> <br />
+      <textarea
+        name="about"
+        id="about"
+        cols="30"
+        rows="10"
+        placeholder="about you..."
+      ></textarea>
+
+      <br /><br />
+
+      <input type="submit" id="submit" name="submit" value="Submit" />
+    </form>
+  </body>
+</html>
