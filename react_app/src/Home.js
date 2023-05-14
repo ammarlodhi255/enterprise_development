@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Welcome from './Welcome';
+import StudentList from './StudentList';
 
 const Home = () => {
 
@@ -38,8 +39,12 @@ const Home = () => {
         {name: 'Ammar', age:23, id:1},
         {name: 'Ahmed', age:21, id:2},
         {name: 'Muzamil', age:24, id:3},
-    ]
-    );
+    ]);
+
+    const handleDelete = (id) => {
+        const newStudents = students.filter(student => student.id !== id);
+        setStudents(newStudents);
+    }
 
     return (
         <div className="home">
@@ -52,15 +57,9 @@ const Home = () => {
             <span>{value}</span>
             <button onClick={handleDecrement}>-</button>
             <br /> <br />
+
             <h2>Students:</h2>
-            <div className="students">
-                {students.map((student) => (
-                    <div className="student" key={student.id}>
-                        <h4>Name: {student.name}</h4>
-                        <p>Age: {student.age}</p>
-                    </div>
-                ))}
-            </div>
+            <StudentList students={ students } handleDelete={handleDelete}/>
 
             <br /><br />
             <Welcome title={'Mr.'} name={'Abdul'} />
