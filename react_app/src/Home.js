@@ -52,9 +52,13 @@ const Home = () => {
 
     // UseEffect and dependencies:
 
+    // Using useEffect to fetch data:
+    
+    const [blogs, setBlogs] = useState(null);
+    
     useEffect(() => {
-        console.log('useEffect Invoked');
-    }, [name]);
+        
+    }, []);
 
     return (
         <div className="home">
