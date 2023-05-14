@@ -4,6 +4,8 @@ import StudentList from './StudentList';
 
 const Home = () => {
 
+    // Demonstration of event handlers with and without arguments:
+
     const handleClick = (e) => {
         console.log("Click Me Event Fired!!");
     }
@@ -41,14 +43,18 @@ const Home = () => {
         {name: 'Muzamil', age:24, id:3},
     ]);
 
+    // Functions as props:
+
     const handleDelete = (id) => {
         const newStudents = students.filter(student => student.id !== id);
         setStudents(newStudents);
     }
 
+    // UseEffect and dependencies:
+
     useEffect(() => {
         console.log('useEffect Invoked');
-    })
+    }, [name]);
 
     return (
         <div className="home">
