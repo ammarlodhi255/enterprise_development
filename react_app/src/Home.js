@@ -53,7 +53,6 @@ const Home = () => {
     }
 
     // UseEffect and dependencies:
-
     // Using useEffect to fetch data:
     
     const { data:blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
