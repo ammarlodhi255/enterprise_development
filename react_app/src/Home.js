@@ -56,16 +56,28 @@ const Home = () => {
     // Using useEffect to fetch data:
     
     const [blogs, setBlogs] = useState(null);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8000/blogs')
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            console.log(data);
-            setBlogs(data);
-        })
+        setTimeout(() => {
+            fetch('http://localhost:8000/blogs')
+                .then(res => {
+                    if (!res.ok) {
+                        throw Error('Could not find the resource!')
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    setBlogs(data);
+                    setIsPending(false);    
+                    setError(null);
+                })
+                .catch(err => {
+                    setIsPending(false);
+                    setError(err.message);
+                });
+        }, 1000);
     }, []);
 
     return (
@@ -84,9 +96,11 @@ const Home = () => {
             <StudentList students={ students } handleDelete={handleDelete}/>
 
             <br /><br />
-            <Welcome title={'Mr.'} name={'Abdul'} />
+            <Welcome title={''} name={'Visitor'} />
             <br /><br />
 
+            {error && <h3>{ error }</h3>}
+            {isPending && <h3>Loading Blogs...</h3>}
             {blogs && <BlogList blogs={ blogs } />}
         </div>
     );
