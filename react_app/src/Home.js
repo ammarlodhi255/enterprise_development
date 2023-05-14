@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Welcome from './Welcome';
 
 const Home = () => {
 
@@ -23,11 +24,11 @@ const Home = () => {
     const [value, setValue] = useState(0);
 
     const handleIncrement = () => {
-        setValue(value + 1);
+        setValue(prev => prev + 1);
     }
 
     const handleDecrement = () => {
-        setValue(value - 1);
+        setValue(prev => prev - 1);
     }
 
 
@@ -60,6 +61,9 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+
+            <br /><br />
+            <Welcome title={'Mr.'} name={'Abdul'} />
         </div>
     );
 }
