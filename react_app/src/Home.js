@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Welcome from './Welcome';
 import StudentList from './StudentList';
 
@@ -45,6 +45,10 @@ const Home = () => {
         const newStudents = students.filter(student => student.id !== id);
         setStudents(newStudents);
     }
+
+    useEffect(() => {
+        console.log('useEffect Invoked');
+    })
 
     return (
         <div className="home">
