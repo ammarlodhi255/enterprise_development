@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Welcome from './Welcome';
 import StudentList from './StudentList';
+import BlogList from './BlogList';
 
 const Home = () => {
 
@@ -55,9 +56,16 @@ const Home = () => {
     // Using useEffect to fetch data:
     
     const [blogs, setBlogs] = useState(null);
-    
+
     useEffect(() => {
-        
+        fetch('http://localhost:8000/blogs')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            console.log(data);
+            setBlogs(data);
+        })
     }, []);
 
     return (
@@ -77,6 +85,9 @@ const Home = () => {
 
             <br /><br />
             <Welcome title={'Mr.'} name={'Abdul'} />
+            <br /><br />
+
+            {blogs && <BlogList blogs={ blogs } />}
         </div>
     );
 }
