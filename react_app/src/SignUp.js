@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     }
 
     render() {
-        return <>
+        return <>   
             <h2>{JSON.stringify(this.state)}</h2>
             <form>
                 <label for="fullname">Fullname:</label>
