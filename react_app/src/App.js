@@ -2,6 +2,8 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Welcome from './Welcome';
 import SignUp from './SignUp';
+import ClickCounter from './ClickCounter';
+import HoverCounter from './HoverCounter';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -26,7 +28,10 @@ function App() {
     // </Router>
     
     <div className="App">
-      <SignUp />
+      {/* <SignUp /> */}
+
+      <ClickCounter />
+      <HoverCounter />
     </div>
   );
 }
