@@ -5,6 +5,7 @@ import SignUp from './SignUp';
 import ClickCounter from './ClickCounter';
 import HoverCounter from './HoverCounter';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EventBind from './EventBind';
 
 function App() {
   const title = 'Second Component'
@@ -30,8 +31,10 @@ function App() {
     <div className="App">
       {/* <SignUp /> */}
 
-      <ClickCounter />
-      <HoverCounter />
+      {/* <ClickCounter />
+      <HoverCounter /> */}
+
+      <EventBind />
     </div>
   );
 }
