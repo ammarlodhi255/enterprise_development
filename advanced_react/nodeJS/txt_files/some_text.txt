@@ -1,0 +1,1 @@
+NodeJS is an open-source, cross platform, and JavaScript runtime environment.
