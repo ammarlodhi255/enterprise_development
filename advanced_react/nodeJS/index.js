@@ -1,4 +1,3 @@
-const superhero_obj = require("./superhero");
-
-console.log(superhero_obj.getName());
+// const math_module = require("./math");
+// console.log(math_module.add(1, 2), math_module.subtract(3, 2))
 
