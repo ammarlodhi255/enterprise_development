@@ -22,7 +22,8 @@ app.get("/index", (req, res) => {
 
 app.get("/products", (req, res) => {
     products = [
-        { name: "Macbook Pro M2", price: "600000" },
+        { name: 'Macbook Pro M2 14"', price: "605000" },
+        { name: 'Macbook Pro M2 16"', price: "669000" },
         { name: "Macbook Air M2", price: "480000" },
         { name: "Macbook Air M1", price: "280000" },
     ]
