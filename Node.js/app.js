@@ -17,9 +17,21 @@ app.get('/obj', (req, res) => {
 })
 
 app.get("/index", (req, res) => {
-    res.render('index')
+    res.render('index', {platform: "Node.js"})
 })
 
+app.get("/products", (req, res) => {
+    products = [
+        { name: "Macbook Pro M2", price: "600000" },
+        { name: "Macbook Air M2", price: "480000" },
+        { name: "Macbook Air M1", price: "280000" },
+    ]
+    res.render("products", { products })
+})
+
+app.get('*', (req, res) => {
+    res.render('not-found')
+})
 // app.post("/index", (req, res) => {
 //     console.log(req.body)
 // })
